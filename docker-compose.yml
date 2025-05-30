@@ -1,10 +1,9 @@
 services:
-
     splunk:
       image: splunk/splunk:latest
       container_name: splunk
       environment:
-        - SPLUNK_PASSWORD=sCE@7Nb2@4NNv%X@4EjaXZxoHv`LYu`W
+        - SPLUNK_PASSWORD=YOUR_SECURE_PASSWORD_FOR_WEBUI
         - SPLUNK_START_ARGS=--accept-license
         - TZ=CEST
       volumes:
