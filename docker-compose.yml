@@ -1,0 +1,20 @@
+services:
+
+    splunk:
+      image: splunk/splunk:latest
+      container_name: splunk
+      environment:
+        - SPLUNK_PASSWORD=sCE@7Nb2@4NNv%X@4EjaXZxoHv`LYu`W
+        - SPLUNK_START_ARGS=--accept-license
+        - TZ=CEST
+      volumes:
+        - ./data/db:/opt/splunk/var/lib/splunk:rw
+        - ./data/etc:/opt/splunk/etc:rw
+        - /var/log:/hostlog:ro
+      restart: always
+      ports:
+        - "0.0.0.0:514:514/tcp"
+        - "0.0.0.0:514:514/udp"
+        - "127.0.0.1:8000:8000/tcp"
+      tty: true
+
